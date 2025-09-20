@@ -126,11 +126,17 @@ Again, the session server is managing all the ephemeral realtime stuff, and ATpr
 
 If another player creating their own content wants to use a sword or an NPC from someone else's realm, they can add that connection without ever needing changes made to the root or central shard.
 
-An example `ledger` record (remember it has to conform to a `lexicon` record, which is similar to JSON schema):
-
+An example `ledger` record (remember it has to conform to a `lexicon` record, which is similar to JSON schema) where we've recorded that a player was awarded 100 credits:
 ```json
-
-
+{
+  "$type": "protoshards.realm.ledger.entry",
+  "op": "credit",
+  "to": "did:plc:player123",
+  "amount": 100,
+  "reason": "quest:at://.../save-the-knight",
+  "issuedBy": "did:plc:protoshard-authority",
+  "issuedAt": "2025-09-18T..."
+}
 ```
 
 A sample quest:
