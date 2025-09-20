@@ -1,16 +1,6 @@
 // Global Language Map
 export const langMap: Record<string, string[]> = {
-  'de': ['de-DE'],
-  'en': ['en-US'],
-  'es': ['es-ES'],
-  'fr': ['fr-FR'],
-  'ja': ['ja-JP'],
-  'ko': ['ko-KR'],
-  'pl': ['pl-PL'],
-  'pt': ['pt-BR'],
-  'ru': ['ru-RU'],
-  'zh': ['zh-CN'],
-  'zh-tw': ['zh-TW'],
+  'en': ['en-US']
 }
 
 // Giscus Language Map
