@@ -1,6 +1,6 @@
 ---
 title: On the Loss of Wonder
-published: 2026-12-18
+published: 2026-05-18
 draft: false
 tags:
   - Philosophy
