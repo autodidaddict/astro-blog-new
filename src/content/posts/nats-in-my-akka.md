@@ -5,6 +5,7 @@ draft: false
 tags:
   - NATS
   - Akka
+  - Microservices
 description: Exposing an Akka Services as a NATS Microservice
 ---
 
