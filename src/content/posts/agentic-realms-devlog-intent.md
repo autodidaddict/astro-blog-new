@@ -10,6 +10,10 @@ tags:
 description: I add the first agentic feature to Agentic Realms - Intent Mapping
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lA1XvODV7aI?si=auh9n8Fnd2tKTlRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br/>
+
 So far I've been talking about my game project, [Agentic Realms](https://github.com/autodidaddict/agentic-realms), almost as an afterthought. My first two posts on spec-driven development were experience reports from building out some of Agentic Realms' first features. In this post and the many that follow, I want to talk about the actual game and developing it.
 
 I want to talk about _intent mapping_. Before I get to the fancy AI version, let's talk about where the need comes from. 
