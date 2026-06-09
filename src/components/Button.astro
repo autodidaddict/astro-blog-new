@@ -1,11 +1,12 @@
 ---
+import type { Language } from '@/i18n/config'
 import LanguageSwitcherIcon from '@/assets/icons/language-switcher.svg'
 import ThemeToggleIcon from '@/assets/icons/theme-toggle.svg'
 import { moreLocales, themeConfig } from '@/config'
 import { getNextGlobalLangPath, getNextSupportedLangPath } from '@/i18n/path'
 
 interface Props {
-  supportedLangs: string[]
+  supportedLangs: Language[]
 }
 
 const {
@@ -49,6 +50,8 @@ const nextUrl = supportedLangs.length > 0
   <button
     id="theme-toggle-button"
     class="aspect-square w-4 c-secondary active:scale-90 hover:c-primary"
+    data-light-mode={lightMode}
+    data-dark-mode={darkMode}
     aria-label="Switch light/dark theme"
   >
     <ThemeToggleIcon
@@ -59,19 +62,17 @@ const nextUrl = supportedLangs.length > 0
 </div>
 
 <!-- Theme Toggle Script >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-<script
-  is:inline
-  define:vars={{
-    lightMode,
-    darkMode,
- }}
->
+<script>
 // Apply theme changes
-function applyTheme(isDark) {
+function applyTheme(isDark: boolean) {
   document.documentElement.classList.toggle('dark', isDark)
 
   // Update meta theme-color tag
   const metaThemeColor = document.head.querySelector('meta[name="theme-color"]')
+  const themeButton = document.getElementById('theme-toggle-button')
+  const lightMode = themeButton?.dataset.lightMode
+  const darkMode = themeButton?.dataset.darkMode
+
   if (metaThemeColor && lightMode && darkMode) {
     metaThemeColor.setAttribute('content', isDark ? darkMode : lightMode)
   }
@@ -87,11 +88,12 @@ function toggleTheme() {
 }
 
 // Handle theme toggle click events
-function handleThemeToggleClick(e) {
-  const target = e.target instanceof Element ? e.target : null
-  const button = target?.closest('#theme-toggle-button')
+function handleThemeToggle(e: MouseEvent) {
+  if (!(e.target instanceof Element)) {
+    return
+  }
 
-  if (!button) {
+  if (!e.target.closest('#theme-toggle-button')) {
     return
   }
 
@@ -102,7 +104,7 @@ function handleThemeToggleClick(e) {
   }
 
   // Add temporary markers before view transition
-  document.documentElement.style.setProperty('view-transition-name', 'animation-theme-toggle')
+  document.documentElement.style.setProperty('view-transition-name', 'theme-toggle-transition')
   document.documentElement.setAttribute('data-theme-changing', '')
 
   // Use View Transitions API for theme toggle
@@ -115,14 +117,12 @@ function handleThemeToggleClick(e) {
   })
 }
 
-// Bind click event to the button
-document.addEventListener('click', handleThemeToggleClick, { passive: true })
-
 // Listen to system theme changes in real time
-window.matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', (event) => {
-    const isDark = event.matches
-    // Apply system theme preference
-    applyTheme(isDark)
-  })
+function handleSystemChange(event: MediaQueryListEvent) {
+  const isDark = event.matches
+  applyTheme(isDark)
+}
+
+document.addEventListener('click', handleThemeToggle)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', handleSystemChange)
 </script>

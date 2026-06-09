@@ -18,7 +18,8 @@ const pages = Object.fromEntries(
 )
 
 // Configure Open Graph image generation route
-export const { getStaticPaths, GET } = OGImageRoute({
+// eslint-disable-next-line antfu/no-top-level-await
+export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'image',
   pages,
   getImageOptions: (_path, page) => ({
@@ -34,22 +35,20 @@ export const { getStaticPaths, GET } = OGImageRoute({
     },
     font: {
       title: {
-        families: ['Noto Sans SC'], // or Noto Serif SC
+        families: ['Noto Sans SC'],
         weight: 'Bold',
         color: [34, 33, 36],
         lineHeight: 1.5,
       },
       description: {
-        families: ['Noto Sans SC'], // or Noto Serif SC
+        families: ['Noto Sans SC'],
         color: [72, 71, 74],
         lineHeight: 1.5,
       },
     },
     fonts: [
-      'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
-      'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
-      // 'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Serif/SubsetOTF/SC/NotoSerifSC-Bold.otf',
-      // 'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Serif/SubsetOTF/SC/NotoSerifSC-Regular.otf',
+      './public/fonts/NotoSansSC-Bold.otf',
+      './public/fonts/NotoSansSC-Regular.otf',
     ],
     bgGradient: [[242, 241, 245]],
   }),

@@ -1,5 +1,6 @@
 import type { APIContext, ImageMetadata } from 'astro'
 import type { CollectionEntry } from 'astro:content'
+import type { Language } from '@/i18n/config'
 import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import { Feed } from 'feed'
@@ -13,7 +14,7 @@ import { getPostDescription } from '@/utils/description'
 
 const markdownParser = new MarkdownIt()
 const { title, description, i18nTitle, url, author } = themeConfig.site
-const { follow } = themeConfig.seo ?? {}
+const { folo } = themeConfig.seo ?? {}
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Dynamically import all images from /src/content/posts/_images
@@ -108,7 +109,7 @@ async function fixRelativeImagePaths(htmlContent: string, baseUrl: string): Prom
  * @param options.lang Optional language code
  * @returns A Feed instance ready for RSS or Atom output
  */
-export async function generateFeed({ lang }: { lang?: string } = {}) {
+export async function generateFeed({ lang }: { lang?: Language } = {}) {
   const currentUI = ui[lang as keyof typeof ui] ?? ui[defaultLocale as keyof typeof ui] ?? {}
   const siteURL = lang ? `${url}${base}/${lang}/` : `${url}${base}/`
 
@@ -192,13 +193,13 @@ export async function generateFeed({ lang }: { lang?: string } = {}) {
     })
   }
 
-  // Add follow verification if available
-  if (follow?.feedID && follow?.userID) {
+  // Add folo verification if available
+  if (folo?.feedID && folo?.userID) {
     feed.addExtension({
-      name: 'follow_challenge',
+      name: 'folo_challenge',
       objects: {
-        feedId: follow.feedID,
-        userId: follow.userID,
+        feedId: folo.feedID,
+        userId: folo.userID,
       },
     })
   }
@@ -210,7 +211,7 @@ export async function generateFeed({ lang }: { lang?: string } = {}) {
 // Generate RSS 2.0 format feed
 export async function generateRSS(context: APIContext) {
   const feed = await generateFeed({
-    lang: context.params?.lang as string | undefined,
+    lang: context.params?.lang as Language | undefined,
   })
 
   // Add XSLT stylesheet to RSS feed
@@ -230,7 +231,7 @@ export async function generateRSS(context: APIContext) {
 // Generate Atom 1.0 format feed
 export async function generateAtom(context: APIContext) {
   const feed = await generateFeed({
-    lang: context.params?.lang as string | undefined,
+    lang: context.params?.lang as Language | undefined,
   })
 
   // Add XSLT stylesheet to Atom feed

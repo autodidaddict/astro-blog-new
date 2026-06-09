@@ -2,37 +2,44 @@ import { base, moreLocales } from '@/config'
 import { getLangFromPath } from '@/i18n/lang'
 import { getLocalizedPath } from '@/i18n/path'
 
-// Checks if normalized path matches a specific page type
-function isPageType(path: string, prefix: string = '') {
+// Determine if the path matches a specific page type
+function matchPageType(path: string, prefix: string = '') {
+  // Remove base path if configured
   const pathWithoutBase = base && path.startsWith(base)
     ? path.slice(base.length)
     : path
 
-  // Removes leading and trailing slashes from the path
+  // Remove leading and trailing slashes from the path
   const normalizedPath = pathWithoutBase.replace(/^\/|\/$/g, '')
 
+  // Homepage check: matches root path ('') or language code ('en', 'zh-tw')
   if (prefix === '') {
-    return normalizedPath === '' || moreLocales.includes(normalizedPath)
+    return normalizedPath === '' || (moreLocales as readonly string[]).includes(normalizedPath)
   }
 
-  return normalizedPath.startsWith(prefix)
-    || moreLocales.some(lang => normalizedPath.startsWith(`${lang}/${prefix}`))
+  // Ensure strict segment boundary matching to prevent partial matches
+  const startsWithSegment = (target: string, segment: string) =>
+    target === segment || target.startsWith(`${segment}/`)
+
+  // Match both default language paths and localized paths
+  return startsWithSegment(normalizedPath, prefix)
+    || moreLocales.some(lang => startsWithSegment(normalizedPath, `${lang}/${prefix}`))
 }
 
 export function isHomePage(path: string) {
-  return isPageType(path)
+  return matchPageType(path)
 }
 
 export function isPostPage(path: string) {
-  return isPageType(path, 'posts')
+  return matchPageType(path, 'posts')
 }
 
 export function isTagPage(path: string) {
-  return isPageType(path, 'tags')
+  return matchPageType(path, 'tags')
 }
 
 export function isAboutPage(path: string) {
-  return isPageType(path, 'about')
+  return matchPageType(path, 'about')
 }
 
 // Returns page context with language, page types and localization helper

@@ -5,7 +5,8 @@ import GoBackIcon from '@/assets/icons/go-back.svg';
 <button
   id="back-button"
   class="hidden"
-  lg="absolute left--10 top-3.8 block aspect-square w-4.5 c-secondary/40 transition-colors ease-out hover:c-secondary/80 active:scale-90!"
+  lg="absolute left--10 top-3.8 block aspect-square w-4.5 c-secondary/60 transition-colors ease-out hover:c-primary active:scale-90!"
+  type="button"
   aria-label="Go back"
 >
   <GoBackIcon
@@ -17,10 +18,11 @@ import GoBackIcon from '@/assets/icons/go-back.svg';
 <!-- Go Back Script >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 <script>
 function handleBackButtonClick(e: MouseEvent) {
-  const target = e.target instanceof Element ? e.target : null
-  const button = target?.closest('#back-button')
+  if (!(e.target instanceof Element)) {
+    return
+  }
 
-  if (!button) {
+  if (!e.target.closest('#back-button')) {
     return
   }
 
@@ -37,5 +39,5 @@ function handleBackButtonClick(e: MouseEvent) {
   }
 }
 
-document.addEventListener('click', handleBackButtonClick, { passive: true })
+document.addEventListener('click', handleBackButtonClick)
 </script>

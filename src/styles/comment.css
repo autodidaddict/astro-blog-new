@@ -203,3 +203,6 @@
 #waline .wl-like {
   --at-apply: 'mr-1.2';
 }
+#waline .wl-meta-foot {
+  --at-apply: 'hidden';
+}

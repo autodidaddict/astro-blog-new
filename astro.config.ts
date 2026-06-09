@@ -37,7 +37,7 @@ export default defineConfig({
   i18n: {
     locales: Object.entries(langMap).map(([path, codes]) => ({
       path,
-      codes: codes as [string, ...string[]],
+      codes: [...codes] as [string, ...string[]],
     })),
     defaultLocale,
   },
@@ -94,22 +94,19 @@ export default defineConfig({
       {
         name: 'prefix-font-urls-with-base',
         transform(code, id) {
-          if (!id.endsWith('src/styles/font.css')) {
+          if (!id.split('?')[0].endsWith('src/styles/font.css')) {
             return null
           }
 
-          return code.replace(/url\("\/fonts\//g, `url("${base}/fonts/`)
+          return code.replace(/url\(\s*(['"]?)\/fonts\//g, `url($1${base}/fonts/`)
         },
       },
     ],
+    build: {
+      chunkSizeWarningLimit: 600,
+    },
   },
   devToolbar: {
     enabled: false,
-  },
-  // For local development
-  server: {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://giscus.app',
-    },
   },
 })
