@@ -7,7 +7,7 @@ tags:
   - AI
   - Vibe coding
   - Monads
-  - MUDs
+  - MUD
 description: A measured experiment with AI-assisted development 
 ---
 
@@ -126,8 +126,9 @@ wizardCommandRegistry =
      registerCommand ["help"] helpCmd emptyRegistry
 ```
 
-There is an abstraction being used here called a `CommandRegistry`. This abstraction and all of the stuff you see in this function came from the AI assistant. The success{{< sidenote "sn-cmdregistry" >}}There is a `cmdPrimary` field that I need to get the AI to remove. Getting it to handle the concept of command aliases took several hours and dozenas of prompts. This took longer than I hoped because I didn't notice the "think more" box had unchecked itself.{{< /sidenote >}}
-or failure of these abstractions all comes down to the quality and precision of my prompts. 
+There is an abstraction being used here called a `CommandRegistry`. This abstraction and all of the stuff you see in this function came from the AI assistant. There is a `cmdPrimary` field that I need to get the AI to remove. Getting it to handle the concept of command aliases took several hours and dozenas of prompts. _This took longer than I hoped because I didn't notice the "think more" box had unchecked itself_.
+
+The success or failure of these abstractions all comes down to the quality and precision of my prompts. 
 
 Before moving on to the prompting, here's a snippet of code that is invoked _by user-supplied Lua scripts_ to send a message to a player:
 
@@ -188,11 +189,11 @@ Trust me when I say that rejecting your assistant's suggestions is a regular par
 
 Another habit I formed is to _git commit my prompts_. While Junie (and other assistants) maintain the prompt history, one thing they _don't_ do (well) is maintain the correlation between your prompt and the code changed. 
 
-What I do is when I've made an AI-generated or supported change, I will add the prompt directly to the commit message. Use `git commit` without supplying the usual `-m` parameter. This will bring up your default editor to create the commit message.{{< sidenote "sn-commits" >}}Most IDEs/editors have support or plugins for committing multi-line messages.{{< /sidenote >}}
+What I do is when I've made an AI-generated or supported change, I will add the prompt directly to the commit message. Use `git commit` without supplying the usual `-m` parameter. This will bring up your default editor to create the commit message (Most IDEs/editors have support or plugins for committing multi-line messages).
 
 As usual, the subject of the commit message is the first line. Leave a blank line, and then past the prompt that produced the code change exactly as you typed it.
 
-This not only lets people on your team know that this commit was prompt-supported{{< sidenote "sn-shame" >}}There is no shame in this. AI-supported development is here now and isn't going anywhere.{{< /sidenote >}}, but it also lets everyone see _what_ prompt you used. 
+This not only lets people on your team know that this commit was prompt-supported, but it also lets everyone see _what_ prompt you used. There is no shame in this. AI-supported development is here now and isn't going anywhere.
 
 There's many benefits for this. First, it lets your team learn from their prompts and the code produced. Additionally, you can now use your own git commit history as context in subsequent prompts to learn from and improve this dev loop.
 
@@ -248,4 +249,3 @@ Generative AI is _fantastic_ at producing test data. It can generate sample data
 **Yes**, for the narrow definition of `vibe` that refers to using an AI assistant to _meet your specific demands_ without using it to produce architectures and designs from thin air. Vibe coding does not abdicate your responsibility as a developer who owns a code base. 
 
 In fact, you have _more_ responsibility because you not only own the design and architecture, but you own the code produced by the AI. _You can't blame the AI for allowing bad code to make its way to production_--that's on us.
-TBD

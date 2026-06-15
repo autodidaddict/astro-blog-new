@@ -5,7 +5,7 @@ draft: false
 #author: "Kevin Hoffman"
 description: "An experiment to isolate mud side effects from pure functions"
 tags:
-  - MUDs
+  - MUD
   - Monads
   - Haskell
   - FP
