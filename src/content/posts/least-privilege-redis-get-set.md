@@ -82,7 +82,7 @@ let expiry_of (kw : string) (n : int) : expiry =
   | _ -> assert false
 ```
 
-And then there was another set of march arms with the exact same string literals in `parse_set`'s recursive `go` function (lines 10 through 14 are particularly gross):
+And then there was another set of match arms with the exact same string literals in `parse_set`'s recursive `go` function (lines 10 through 14 are particularly gross):
 
 ```ocaml
 | Bulk_string (Some tok) :: rest -> (
