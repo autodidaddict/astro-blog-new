@@ -175,3 +175,5 @@ So there you go, [that's my SDK](https://github.com/autodidaddict/temporal-ocaml
 
 ---
 **_AI disclosure_**: _I used Claude for some of the SDK work. Specifically, Claude saved my life when I was trying to set up the magic incantation that lets OCaml use my C wrapper around the Rust C FFI from the official Rust SDK's Temporal core. Nobody has time to figure that out by hand._
+
+_Claude does not write any of my prose. Only I can butcher the English language this way._
