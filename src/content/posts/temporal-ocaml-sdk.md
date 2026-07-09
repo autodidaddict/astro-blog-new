@@ -41,7 +41,7 @@ If you want to get super nerdy about this, you can think of it as a distributed 
 ## Writing a Temporal Worker in OCaml
 You all know I love a [good event sourcing story](https://pragprog.com/titles/khpes/real-world-event-sourcing/), and Temporal is no exception. It's event-sourced internally and I use event-sourcing in the OCaml implementation of the SDK. Remember when I said I was pleasantly surprised that these SDKs weren't just simple gRPC clients? No? Well, keep reading anyway.
 
-From the SDKs I looked at when trying to figure out what "idiomatic Temporal" looked like, the prevailing pattern is for developers to declare their activities as functions, declare their workflows as functions, and declare the signals to which the workflow responds as strongly typed structures. In Rust, this is done through macro expansion and the `#[workflow]` tag. Python uses something like `@workflow` and so on.
+From the SDKs I looked at when trying to figure out what "idiomatic Temporal" looked like, the prevailing pattern is for developers to declare their activities as functions, declare their workflows as functions, and declare the signals to which the workflow responds as strongly typed structures. In Rust, this is done through macro expansion and the `#[run]` tag. Python uses something like `@workflow` and so on.
 
 I'll start with the smallest primitive and then work my way to the top. I've built an eCommerce sample with a number of representative workflows to show how to use the SDK. The lowest level primitive is the _signal_, and I have 2 of them that I use for an approval workflow. They're defined as follows:
 
