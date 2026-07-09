@@ -122,10 +122,11 @@ module Return_request = struct
             j |> member "return_items" |> to_list |> List.map Line_item.of_json })
 end
 ```
+I'm not going to hide or sugar-coat this. This is the ugliest code you'll have to write as a consumer of this OCaml SDK (without using extras).
 
-I'm not going to hide or sugar-coat this. This is the ugliest code you'll have to write as a consumer of this OCaml SDK. I decided to accept this point of friction to remove another. If you're using this SDK, there are _no_ additional dependencies in your project file beyond the ones you'd expect (you can see `yojson` up there, but it's small). No Jane Street, no hard OCaml language version limits, etc. An easy build is a happy build. A happy build is a happy dev. 
+If you, as the consumer of the SDK, choose to use the `ppx`/Jane Street ecosystem, then you can definitely do so and then you won't have to manually define Codecs. The stance I took was that I didn't want my SDK to _force_ you to take those dependencies. That should be your choice.
 
-If you _really_ don't like this syntax, just have your AI assistant write it for you from the `t` type definition. Shouldn't take it many tokens at all.
+An easy build is a happy build. A happy build is a happy dev. 
 
 ## Launch it
 Now that we've defined our workflows and activities and signal handlers, we're ready to launch the application. As I mentioned in my last post on Temporal, you don't ship them your code and they don't run it. Your code runs wherever and however you want, and it connects to a Temporal server for its core functionality.
