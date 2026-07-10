@@ -14,7 +14,7 @@ Last night I was watching a science documentary show and they used the analogy o
 This was the last straw and I had to turn it off.
 
 ## Fabric is Conceptually 2-Dimensional
-When you hear people say "the fabric of spacetime", _most_ people think about fabric on spools or being used to make things. A thin sheet of a thing _onto which_ you can place things like boxes or bowling balls or weak comparisons. This is why I've never really liked calling the fabric metaphor. This is a classic example of where a word has specific meaning to a small community but the rest of humanity has a different default meaning.
+When you hear people say "the fabric of spacetime", _most_ people think about fabric on spools or being used to make things. A thin sheet of a thing _onto which_ you can place things like boxes or bowling balls or weak comparisons. This is why I've never really liked the fabric metaphor. This is a classic example of where a word has specific meaning to a small community but the rest of humanity has a totally different definition.
 
 ![The fabric of spacetime, with balls on top](/images/spacetime_balls.jpeg)
 
@@ -36,7 +36,7 @@ You're likely familiar with the idea of the "path of least resistance" as the re
 
 🗒️ _Technically, lightning bolts create many different paths of ionized air and the first one to hit the ground travels **back up** the winning path. For us programmer nerds, that's like a tree traversal algorithm. Lightning's search on the way to the ground is a highly parallel **stepped leader** algorithm where all the failed paths go away once a winner is found. Fascinating, right?_
 
-Then what makes us stick to the planet and fall off of buildings and out of trees (presumably onto an awaiting Newton)? If you said, _"the force of gravity"_, then you've been brainwashed by Big Documentary. That's what they want you to think and it's _wrong_. In general relativity, gravity isn't treated like a regular _force_. In Einstein's theory, gravity isn't treated as a conventional force. Objects in free fall simply follow the natural straightest possible paths through curved spacetime.
+Then what makes us stick to the planet and fall off of buildings and out of trees (presumably onto an awaiting Newton)? If you said, _"the force of gravity"_, then you've been brainwashed by Big Documentary. That's what they want you to think and it's _wrong_. In Einstein's theory, gravity isn't treated as a conventional force. Objects in free fall simply follow the natural straightest possible paths through curved spacetime.
 
 Whenever an object isn't being acted on by forces _other than gravity_, it's in free fall, and it follows the path through spacetime that maximizes its own elapsed time, the **path of maximal aging**.
 
@@ -46,7 +46,7 @@ Massive objects warp spacetime. They don't warp it _into_ anything. There's no h
 
 This warping is not a cannonball on a bedsheet, it is a changing of the geometry. It's not stretching like rubber or bending because that brings us back to the bad analogy. Think of it like changing the rules of how distance and time are measured. That change affects the path an object will travel.
 
-With nothing else acting on an object in free-fall, it will take a path that produces the experience of the most time. It doesn't experience more time because of a stretching, it experiences it because the geometry changes in that region. Maybe we can say that the axis is stretching, and not the "stuff" of spacetime?
+With nothing else acting on an object in free-fall, it will take a path that produces the experience of the most time. It doesn't experience more time because of a stretching, it experiences it because the geometry changes in that region. It isn't even stretching the space between points on a graph's axis, it's changing a weighting function for infinitely many intervals.
 
 So next time someone says they fell down, stick it to Big Documentary and tell them that their body traveled the path of maximal aging until other forces acted on it. Trust me, they'll thank you. Honest.
 
