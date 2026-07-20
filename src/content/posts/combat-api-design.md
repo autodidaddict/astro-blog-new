@@ -72,9 +72,7 @@ Because the SRD rules vary from one edition to the next, some rules like _exhaus
 If I want to expose the "old" exhaustion formula, I can do it as an opt-in choice made by the caller with an option like `edition: 5.1`.
 
 ## Resolving a Combat Round with My Library
-TBD
-
-Here's an example day in the life of a game resolving combat turns using SRD:
+So let's see what this API looks like in action. Here's an example day in the life of a game resolving combat turns using SRD:
 
 ```elixir
 alias Srd.Content.{Weapons, Armors}
