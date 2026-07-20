@@ -106,9 +106,9 @@ Hitpoints.new(15, 15) |> Hitpoints.damage(dealt.final)
 end
 ```
 
-When `Hitpoints` reports `:downed`, the caller starts death saves; a hit taken
-while at 0 hit points is a failure it routes in.
-
+When `Hitpoints` reports `:downed`, the caller starts death saves. During
+the death save phase, you can recover or you can be hit again and become "really dead".
+ 
 ```elixir
 down = Hitpoints.new(4, 15) |> Hitpoints.damage(4)
 down.outcome
