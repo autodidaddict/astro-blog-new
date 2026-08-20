@@ -193,7 +193,7 @@ _**10,000 viewers cost 27.8 microseconds per tick against a 50ms budget**_. That
 
 I had a whole plan for the next feature where I update subscribers. When a viewer moves, you need to know which cells they entered and which they exited, because that's what drives spawn and despawn on the client. The obvious approach is to build both bounding boxes and diff them. But since a single-cell move only ever changes one row and one column, you can compute just those two strips directly and never build either box at all.
 
-That trick depends on an invariant, and it's one my config already enforces. At 40 m/s on a 20Hz tick, an entity moves 2m per tick against 128m cells, so it can only ever cross one cell boundary per axis per tick. My `build()` refuses to construct a config where that isn't true:
+That trick depends on an invariant enforced by my configuration. At 40 m/s on a 20Hz tick, an entity moves 2m per tick through 128m cells, so it can only ever cross one cell boundary per axis per tick. My `build()` refuses to construct a config where that isn't true:
 
 ```rust
 if max_move_per_tick.raw() as u32 >= cell_raw {
