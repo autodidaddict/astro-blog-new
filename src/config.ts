@@ -4,11 +4,11 @@ export const themeConfig: ThemeConfig = {
   // SITE INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   site: {
     // site title
-    title: "Kevin Hoffman's Blog",
+    title: 'Kevin Hoffman\'s Blog',
     // site subtitle
     subtitle: 'Bloviation about development, dragons, and all that lies between',
     // site description
-    description: "This is Kevin Hoffman's blog. Here I blog about everything from writing fantasy and science fiction, to writing technical books and more. I even share some technical content from time to time.",
+    description: 'This is Kevin Hoffman\'s blog. Here I blog about everything from writing fantasy and science fiction, to writing technical books and more. I even share some technical content from time to time.',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
     i18nTitle: false, // true | false
     // author name
@@ -138,7 +138,7 @@ export const themeConfig: ThemeConfig = {
     },
     // google analytics
     // https://analytics.google.com
-    googleAnalyticsID: '316209520',
+    googleAnalyticsID: 'G-ES8KEXL7QP',
     // umami analytics
     // https://cloud.umami.is
     umamiAnalyticsID: '',
