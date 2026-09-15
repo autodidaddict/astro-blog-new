@@ -7,6 +7,7 @@ interface Translation {
   posts: string
   tags: string
   about: string
+  publications: string
   toc: string
 }
 
@@ -18,15 +19,17 @@ export const ui: Record<Language, Translation> = {
     posts: 'Beiträge',
     tags: 'Schlagwörter',
     about: 'Über',
+    publications: 'Publikationen',
     toc: 'Inhaltsverzeichnis',
   },
   'en': {
-    title: "Kevin Hoffman's Blog",
-    subtitle: "Kevin Hoffman's Blog",
+    title: 'Kevin Hoffman\'s Blog',
+    subtitle: 'Kevin Hoffman\'s Blog',
     description: 'Bloviation about development, dragons, and all that lies between',
     posts: 'Posts',
     tags: 'Tags',
     about: 'About',
+    publications: 'Publications',
     toc: 'Table of Contents',
   },
   'es': {
@@ -36,6 +39,7 @@ export const ui: Record<Language, Translation> = {
     posts: 'Artículos',
     tags: 'Etiquetas',
     about: 'Sobre',
+    publications: 'Publicaciones',
     toc: 'Índice',
   },
   'fr': {
@@ -45,6 +49,7 @@ export const ui: Record<Language, Translation> = {
     posts: 'Articles',
     tags: 'Étiquettes',
     about: 'À propos',
+    publications: 'Publications',
     toc: 'Table des matières',
   },
   'ja': {
@@ -54,6 +59,7 @@ export const ui: Record<Language, Translation> = {
     posts: '記事',
     tags: 'タグ',
     about: '概要',
+    publications: '著書',
     toc: '目次',
   },
   'ko': {
@@ -63,6 +69,7 @@ export const ui: Record<Language, Translation> = {
     posts: '게시물',
     tags: '태그',
     about: '소개',
+    publications: '저서',
     toc: '목차',
   },
   'pl': {
@@ -72,6 +79,7 @@ export const ui: Record<Language, Translation> = {
     posts: 'Artykuły',
     tags: 'Tagi',
     about: 'O stronie',
+    publications: 'Publikacje',
     toc: 'Spis treści',
   },
   'pt': {
@@ -81,6 +89,7 @@ export const ui: Record<Language, Translation> = {
     posts: 'Artigos',
     tags: 'Tags',
     about: 'Sobre',
+    publications: 'Publicações',
     toc: 'Sumário',
   },
   'ru': {
@@ -90,6 +99,7 @@ export const ui: Record<Language, Translation> = {
     posts: 'Посты',
     tags: 'Теги',
     about: 'О себе',
+    publications: 'Публикации',
     toc: 'Оглавление',
   },
   'zh': {
@@ -99,6 +109,7 @@ export const ui: Record<Language, Translation> = {
     posts: '文章',
     tags: '标签',
     about: '关于',
+    publications: '出版物',
     toc: '目录',
   },
   'zh-tw': {
@@ -108,6 +119,7 @@ export const ui: Record<Language, Translation> = {
     posts: '文章',
     tags: '標籤',
     about: '關於',
+    publications: '出版物',
     toc: '目錄',
   },
 }

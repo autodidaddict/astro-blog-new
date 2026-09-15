@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from 'astro:content'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+
+const currentLang = getLangFromLocale(Astro.currentLocale)
+// Get publications page content with different language
+const allPublicationEntries = await getCollection('publications')
+const publicationsEntry = allPublicationEntries.find(entry => entry.data.lang === currentLang)
+  ?? allPublicationEntries.find(entry => entry.data.lang === '')
+const { Content } = publicationsEntry ? await render(publicationsEntry) : { Content: null }
+---
+
+<Layout>
+  <!-- Decorative Line -->
+  <div class="uno-decorative-line" />
+  <!-- Publications Page Content -->
+  <div class="heti">
+    {Content && <Content />}
+  </div>
+</Layout>
+
+<style>
+/* Contain floated covers so the last one never spills past the content */
+.heti {
+  display: flow-root;
+}
+
+/* Each book starts below the previous cover */
+.heti :global(h2) {
+  clear: both;
+}
+
+/* Book covers float beside their descriptions */
+.heti :global(.book-cover) {
+  float: left;
+  width: 7.5rem;
+  margin: 0.35rem 1.25rem 0.5rem 0;
+  border: 1px solid oklch(var(--un-preset-theme-colors-secondary) / 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px oklch(var(--un-preset-theme-colors-primary) / 0.15);
+}
+
+@media (min-width: 1024px) {
+  .heti :global(.book-cover) {
+    width: 10rem;
+    margin-right: 1.5rem;
+  }
+}
+</style>
