@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+
+const currentLang = getLangFromLocale(Astro.currentLocale)
+// Get speaking page content with different language
+const allSpeakingEntries = await getCollection('speaking')
+const speakingEntry = allSpeakingEntries.find(entry => entry.data.lang === currentLang)
+  ?? allSpeakingEntries.find(entry => entry.data.lang === '')
+const { Content } = speakingEntry ? await render(speakingEntry) : { Content: null }
+---
+
+<Layout>
+  <!-- Decorative Line -->
+  <div class="uno-decorative-line" />
+  <!-- Speaking Page Content -->
+  <div class="heti">
+    {Content && <Content />}
+  </div>
+</Layout>

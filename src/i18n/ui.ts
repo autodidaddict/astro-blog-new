@@ -8,6 +8,7 @@ interface Translation {
   tags: string
   about: string
   publications: string
+  speaking: string
   toc: string
 }
 
@@ -20,6 +21,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Schlagwörter',
     about: 'Über',
     publications: 'Publikationen',
+    speaking: 'Vorträge',
     toc: 'Inhaltsverzeichnis',
   },
   'en': {
@@ -30,6 +32,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tags',
     about: 'About',
     publications: 'Publications',
+    speaking: 'Public Speaking',
     toc: 'Table of Contents',
   },
   'es': {
@@ -40,6 +43,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Etiquetas',
     about: 'Sobre',
     publications: 'Publicaciones',
+    speaking: 'Charlas',
     toc: 'Índice',
   },
   'fr': {
@@ -50,6 +54,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Étiquettes',
     about: 'À propos',
     publications: 'Publications',
+    speaking: 'Conférences',
     toc: 'Table des matières',
   },
   'ja': {
@@ -60,6 +65,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'タグ',
     about: '概要',
     publications: '著書',
+    speaking: '講演',
     toc: '目次',
   },
   'ko': {
@@ -70,6 +76,7 @@ export const ui: Record<Language, Translation> = {
     tags: '태그',
     about: '소개',
     publications: '저서',
+    speaking: '강연',
     toc: '목차',
   },
   'pl': {
@@ -80,6 +87,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tagi',
     about: 'O stronie',
     publications: 'Publikacje',
+    speaking: 'Wystąpienia',
     toc: 'Spis treści',
   },
   'pt': {
@@ -90,6 +98,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tags',
     about: 'Sobre',
     publications: 'Publicações',
+    speaking: 'Palestras',
     toc: 'Sumário',
   },
   'ru': {
@@ -100,6 +109,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Теги',
     about: 'О себе',
     publications: 'Публикации',
+    speaking: 'Выступления',
     toc: 'Оглавление',
   },
   'zh': {
@@ -110,6 +120,7 @@ export const ui: Record<Language, Translation> = {
     tags: '标签',
     about: '关于',
     publications: '出版物',
+    speaking: '演讲',
     toc: '目录',
   },
   'zh-tw': {
@@ -120,6 +131,7 @@ export const ui: Record<Language, Translation> = {
     tags: '標籤',
     about: '關於',
     publications: '出版物',
+    speaking: '演講',
     toc: '目錄',
   },
 }
