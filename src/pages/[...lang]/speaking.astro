@@ -26,3 +26,10 @@ const { Content } = speakingEntry ? await render(speakingEntry) : { Content: nul
     {Content && <Content />}
   </div>
 </Layout>
+
+<style>
+/* Conference names are italic in the markdown; tint them so they stand out while scrolling */
+.heti :global(em) {
+  color: oklch(var(--un-preset-theme-colors-note));
+}
+</style>
