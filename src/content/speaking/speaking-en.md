@@ -89,6 +89,17 @@ I have been speaking at conferences for well over a decade, on everything from S
 - **[Building a Line of Business Application with Play, Scala, and Akka](https://archives.scaladays.org/2020/assets/archive/ny2013/index.html)**\
   Scala Days, New York, June 2013. Lessons from building a large, data-driven, drag-and-drop line of business web application on the Typesafe stack.
 
+## 2008
+
+- **iPhone vs Windows Mobile**\
+_Apple WWDC 2008_ - A comparison of the two ecosystems, specifically designed to give existing Windows developers the perspective needed to develop in the iPhone ecosystem.
+
+## 2007
+
+- **Cocoa for WPF Developers**\
+_Apple WWDC 2007_ - A comparison of ecosystems and frameworks, comparing the development experience of building for Windows (via WPF) with developing for Mac OS X (via Cocoa)
+
+
 ## Earlier
 
-Before all of this I spent years in the .NET and Apple ecosystems, presenting at Apple's WWDC and at more .NET events than I can reliably reconstruct. If you remember one of those talks and can point me at a recording, I would love to hear from you.
+Before all of this I spent years in the .NET and Apple ecosystems, presenting at more .NET events than I can remember or find evidence for. If you remember one of those talks and can point me at a recording, I would love to hear from you.
