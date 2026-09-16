@@ -33,8 +33,9 @@ const { Content } = publicationsEntry ? await render(publicationsEntry) : { Cont
   display: flow-root;
 }
 
-/* Each book starts below the previous cover */
-.heti :global(h2) {
+/* Each section and each book starts below the previous cover */
+.heti :global(h2),
+.heti :global(h3) {
   clear: both;
 }
 
