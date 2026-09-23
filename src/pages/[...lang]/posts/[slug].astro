@@ -84,6 +84,7 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
   postTitle={post.data.title}
   postDescription={description}
   postSlug={post.id}
+  canonical={post.data.canonical}
   supportedLangs={supportedLangs}
 >
   <article class="heti">

@@ -9,10 +9,11 @@ interface Props {
   postTitle?: string
   postDescription?: string
   postSlug?: string
+  canonical?: string
 }
 
 // Props and Language
-const { postTitle, postDescription, postSlug } = Astro.props
+const { postTitle, postDescription, postSlug, canonical } = Astro.props
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const lang = currentLang === defaultLocale ? '' : `${currentLang}/`
@@ -32,6 +33,8 @@ const siteSubtitle = i18nTitle ? currentUI.subtitle : subtitle
 const siteDescription = i18nTitle ? currentUI.description : description
 
 // Page Metadata
+// Posts first published elsewhere point search engines at the original
+const canonicalURL = canonical ?? Astro.url
 const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle} - ${siteSubtitle}`
 const pageDescription = postDescription || siteDescription
 const pageImage = postSlug
@@ -63,7 +66,7 @@ const pageImage = postSlug
 {katexEnabled && <link rel="stylesheet" href={katexCSS} media="print" onload={`this.media='all'`} />}
 
 <!-- Site Links -->
-<link rel="canonical" href={Astro.url} />
+<link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href={`${base}/sitemap-index.xml`} />
 <link rel="alternate" href={`${base}/rss.xml`} type="application/rss+xml" title="RSS Feed" />
 <link rel="alternate" href={`${base}/atom.xml`} type="application/atom+xml" title="Atom Feed" />
@@ -77,7 +80,7 @@ const pageImage = postSlug
 
 <!-- Open Graph -->
 <meta property="og:type" content={postTitle ? 'article' : 'website'} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
 <meta property="og:image" content={pageImage} />

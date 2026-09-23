@@ -16,6 +16,8 @@ const posts = defineCollection({
       z.date().optional(),
     ),
     tags: z.array(z.string()).optional().default([]),
+    // canonical URL of the original, for posts first published elsewhere
+    canonical: z.url().optional(),
     // Advanced
     draft: z.boolean().optional().default(false),
     pin: z.number().int().min(0).max(99).optional().default(0),

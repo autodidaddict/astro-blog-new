@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 372" width="760" height="372" role="img" aria-label="In the application service, an agent asks a judgment through the Akka SDK, and the Akka Runtime judgment client sends the state and questions to the AI Router in the Akka AI Gateway. The router forwards every request to a backend, consulting the Decision Engine, which chooses the backend by static policy, semantic embedding or SystemOne. The backend sends the judgment request either to the SystemOne API in Optimize on Akka infrastructure, which runs the Jev model, or to the SystemOne API hosted by TypeSafe.">
+<defs>
+  <marker id="amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b5721f"/></marker>
+  <marker id="slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f7079"/></marker>
+</defs>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#5f7079">
+<rect x="0" y="0" width="380" height="100" rx="7" fill="none" stroke="#5f7079" stroke-width="1" stroke-dasharray="1.5 4" stroke-linecap="round" opacity="0.8"/>
+<text x="12" y="18" >application service</text>
+<rect x="12" y="32" width="116" height="50" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2"/>
+<text x="22" y="54" font-size="12.5" font-weight="600">Agent</text>
+<text x="22" y="70" font-size="11">asks a judgment</text>
+<rect x="146" y="32" width="88" height="50" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2"/>
+<text x="156" y="61.5" font-size="12.5" font-weight="600">Akka SDK</text>
+<rect x="252" y="32" width="118" height="50" rx="5" fill="#faf5ef" stroke="#b5721f" stroke-width="1.2"/>
+<text x="262" y="54" font-size="12.5" font-weight="600">Akka Runtime</text>
+<text x="262" y="70" font-size="11">judgment client</text>
+<path d="M128 57 H144" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<path d="M234 57 H250" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<rect x="0" y="140" width="380" height="180" rx="7" fill="none" stroke="#5f7079" stroke-width="1" stroke-dasharray="1.5 4" stroke-linecap="round" opacity="0.8"/>
+<text x="12" y="158" >akka ai gateway</text>
+<rect x="12" y="172" width="78" height="50" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2"/>
+<text x="22" y="201.5" font-size="12.5" font-weight="600">Request</text>
+<rect x="108" y="172" width="168" height="50" rx="5" fill="#faf5ef" stroke="#b5721f" stroke-width="1.2"/>
+<text x="118" y="194" font-size="12.5" font-weight="600">AI Router</text>
+<text x="118" y="210" font-size="11">forwards every request</text>
+<rect x="294" y="172" width="76" height="50" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2"/>
+<text x="304" y="201.5" font-size="12.5" font-weight="600">Backend</text>
+<path d="M90 197 H106" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<path d="M276 197 H292" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<path d="M192 224 V242" fill="none" stroke="#5f7079" stroke-width="1.2" marker-start="url(#slate)" marker-end="url(#slate)"/>
+<rect x="12" y="244" width="358" height="64" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2"/>
+<text x="22" y="263" font-size="12.5" font-weight="600">Decision Engine</text>
+<text x="142" y="263" >chooses the backend by one of</text>
+<rect x="22" y="278" width="104" height="18" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1"/>
+<text x="74" y="291" text-anchor="middle">static policy</text>
+<rect x="134" y="278" width="132" height="18" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1"/>
+<text x="200" y="291" text-anchor="middle">semantic embedding</text>
+<rect x="274" y="278" width="84" height="18" rx="5" fill="#b5721f"/>
+<text x="316" y="291" text-anchor="middle" fill="#ffffff" font-weight="500">SystemOne</text>
+<rect x="420" y="0" width="340" height="162" rx="7" fill="none" stroke="#5f7079" stroke-width="1" stroke-dasharray="1.5 4" stroke-linecap="round" opacity="0.8"/>
+<text x="432" y="18" >optimize on akka infrastructure</text>
+<rect x="432" y="30" width="316" height="50" rx="5" fill="#faf5ef" stroke="#b5721f" stroke-width="1.2"/>
+<text x="442" y="52" font-size="12.5" font-weight="600">SystemOne API</text>
+<text x="442" y="68" font-size="10.5">POST /v1/systemone</text>
+<path d="M590 80 V98" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<rect x="440" y="102" width="308" height="36" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="436" y="106" width="308" height="36" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="432" y="110" width="308" height="36" rx="5" fill="#ffffff" stroke="#5f7079" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="442" y="132.5" font-size="12.5" font-weight="600">Jev model</text>
+<rect x="420" y="182" width="340" height="90" rx="7" fill="none" stroke="#5f7079" stroke-width="1" stroke-dasharray="1.5 4" stroke-linecap="round" opacity="0.8"/>
+<text x="432" y="200" >typesafe hosted</text>
+<rect x="432" y="210" width="316" height="50" rx="5" fill="#faf5ef" stroke="#b5721f" stroke-width="1.2"/>
+<text x="442" y="232" font-size="12.5" font-weight="600">SystemOne API</text>
+<text x="442" y="248" font-size="10.5">POST /v1/systemone</text>
+<path d="M311 82 V121 H192 V168" fill="none" stroke="#b5721f" stroke-width="1.6" marker-end="url(#amber)"/>
+<text x="300" y="116" text-anchor="end" fill="#b5721f">state + questions</text>
+<path d="M370 188 H396 V55 H428" fill="none" stroke="#b5721f" stroke-width="1.6" marker-end="url(#amber)"/>
+<path d="M370 206 H404 V235 H428" fill="none" stroke="#b5721f" stroke-width="1.6" marker-end="url(#amber)"/>
+<path d="M0 356 H34" fill="none" stroke="#b5721f" stroke-width="1.6" marker-end="url(#amber)"/>
+<text x="44" y="360" >agent judgment request</text>
+<path d="M226 356 H260" fill="none" stroke="#5f7079" stroke-width="1.2" marker-end="url(#slate)"/>
+<text x="270" y="360" >other hop</text>
+<rect x="362" y="348" width="30" height="16" rx="3" fill="#ffffff" stroke="#5f7079" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="402" y="360" >assumed</text>
+</g>
+</svg>
